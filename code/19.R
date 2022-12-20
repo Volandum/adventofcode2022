@@ -346,6 +346,8 @@ for(row in 1:3){
     )
 } #strangely much much faster than the 24 turns run
 
+save(file = 'day19lpobjectspt2.RData', list = 'solved_lp_objects_32_turns')
+
 prod(sapply(1:3,
        function(n){
          solved_lp_objects_32_turns[[n]]$objval
