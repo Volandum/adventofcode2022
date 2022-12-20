@@ -31,3 +31,32 @@ for(index in 1:number_of_items){
   position_vector = move_item(index, position_vector)
   #print(input_vector[position_vector])
 }
+
+zero_position = which(position_vector == which(input_vector == 0))
+positions_of_interest = zero_position + c(1000, 2000, 3000)
+indexes_of_interest = position_vector[positions_of_interest]
+items_of_interest = input_vector[indexes_of_interest]
+sum(items_of_interest)
+#2622
+
+
+decryption_key = 811589153
+
+input_vector = input_vector * decryption_key
+position_vector = 1:number_of_items
+print(input_vector[position_vector])
+for(process in 1:10){
+  for(index in 1:number_of_items){
+    position_vector = move_item(index, position_vector)
+    #print(input_vector[position_vector])
+  }
+  #print(input_vector[position_vector])
+}
+# display for test case doesn't match example but it's non-canonical representations (as the list is reorderable)
+
+zero_position = which(position_vector == which(input_vector == 0))
+positions_of_interest = (zero_position + c(1000, 2000, 3000) - 1) %% number_of_items + 1
+indexes_of_interest = position_vector[positions_of_interest]
+items_of_interest = input_vector[indexes_of_interest]
+print_large_number(sum(items_of_interest))
+#1538773034088
